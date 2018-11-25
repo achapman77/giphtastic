@@ -115,6 +115,7 @@ aside {
     font-weight: 600;
     margin: 0 0 0.75em 0.75em;
     padding: 0.5em;
+    text-align: center;
     text-transform: uppercase;
     width: 10em;
 }
