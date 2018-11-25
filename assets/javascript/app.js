@@ -47,7 +47,7 @@ $(function(){
             giphImage.attr("data-still", giphStaticURL)
             //include moving gif url as attr
             giphImage.attr("data-animate", giphAnimateURL)
-
+            giphImage.attr("id", "giph-"+ i);
             giphDiv.append(giphImage);
 
             // Render giph rating
@@ -77,6 +77,34 @@ $(function(){
             b.text(giphs[i]);
             $("#buttons-view").prepend(b)
         }
+    }
+
+    function playAll() {
+        for ( var i = 0; i < 20; i++) {
+            var thisGif = $("#giph-" + i)
+            var state = thisGif.attr("data-state");
+
+            if (state === "still") {
+                thisGif.attr("src", thisGif.attr("data-animate"));
+                thisGif.attr("data-state", "animate");
+            } 
+            // else {
+            //     thisGif.attr("src", thisGif.attr("data-still"));
+            //     thisGif.attr("data-state", "still");
+            // } 
+        }     
+    }
+
+    function stopAll() {
+        for ( var i = 0; i < 20; i++) {
+            var thisGif = $("#giph-" + i)
+            var state = thisGif.attr("data-state");
+
+            if (state === "animate") {
+                thisGif.attr("src", thisGif.attr("data-still"));
+                thisGif.attr("data-state", "still");
+            } 
+        }    
     }
 
     //Toggle still to animate and back using data states
@@ -115,12 +143,19 @@ $(function(){
         }
     });
     
+    $("#control").on("click", "#play-all", function(){
+        playAll();
+    });
+
+    $("#control").on("click", "#stop-all", function(){
+        stopAll();
+    });
     
     
     
 
     renderButtons();
-
+   
 
 
 
