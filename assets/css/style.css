@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
 
 * {
-    /* box-sizing: border-box; */
+    margin: 0;
+}
+
+html, body {
+    /* height: 100%; */
     margin: 0;
 }
 
@@ -13,6 +17,7 @@ body {
     justify-content: center;
     color: whitesmoke;
     text-transform: uppercase;
+    /* overflow: hidden; */
 }
 
 header {
@@ -20,10 +25,19 @@ header {
     border-bottom: 1px solid whitesmoke;
     display: flex;
     flex-direction: row;
+    /* flex: 0 0 auto; */
     justify-content: center;
     /* line-height: 2em; */
-    margin-bottom: 3.5em;
+    /* margin-bottom: 2.5em; */
 }
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
 #navbar {
     width: 80em;
 }
@@ -83,7 +97,7 @@ header {
     /* margin: 0 0.75em 0.75em 0; */
     padding: 0.5em;
     text-transform: uppercase;
-    width: 10em;
+    width: 11.1em;
 }
 
 #add-giph:hover {
@@ -92,11 +106,29 @@ header {
 }
 
 /* Main Content */
+#control{
+    /* align-self: flex-end; */
+    margin: 6.5em 0 0 0;
+    /* height: 5em; */
+    display: flex;
+    justify-content: flex-end;
+    width: 80em;
+}
+i {
+    margin: 0 0.15em;
+}
+
+i:hover {
+    cursor: pointer;
+    color: rgb(7, 7, 233);
+}
 .container {
     align-self: center;
     display: flex;
     flex-direction: row;
     width: 80em;
+    margin-top: 1.5em;
+
     
 }
 
@@ -123,17 +155,35 @@ aside {
 .giph-btn:hover {
     background-color: rgb(7, 7, 233);
     cursor: pointer;
-    
 }
+
+.giph-btn:active {
+    cursor: move;
+}
+
 #giphs-view {
     display: flex;
     flex-flow: row wrap;
-    float: right;
+    /* float: right; */
     justify-content: space-evenly;
     width: 70em;
 }
 
+#giphs-view p {
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
 .giph {
-    margin: 0 1em 1em 0;
+    margin: 0 1em 2.75em 0;
+}
+
+.giph:hover {
+    cursor: pointer;
+}
+
+.giph:active {
+    cursor: move;
 }
 
