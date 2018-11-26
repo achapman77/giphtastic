@@ -1,7 +1,7 @@
 $(function(){
     //Drag and Drop
     $( "#buttons-view, #giphs-view" ).sortable({
-        connectWith: ".connectedSortable"
+        // connectWith: ".connectedSortable"
     }).disableSelection();
       
     
