@@ -191,6 +191,11 @@ i:hover {
     width: 85%;
 }
 
+#giphs-view img {
+    height: 400px;
+    width: auto;
+}
+
 #giphs-view p {
     font-weight: bolder;
     letter-spacing: 0.1em;
