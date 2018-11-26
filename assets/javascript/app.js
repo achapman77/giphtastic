@@ -6,7 +6,7 @@ $(function(){
       
     
 
-    var giphs = ["Pong", "Contra", "Metroid", "Super Mario", "Zelda","HALO", "Call of Duty", "Fortnite", "PUBG"]
+    var giphs = ["Pong", "Frogger", "Contra", "Metroid", "Sonic", "Super Mario", "Zelda", "HALO", "Call of Duty", "Fortnite", "PUBG"]
 
     
     function displayGiphInfo() {
@@ -122,12 +122,19 @@ $(function(){
 
     //Add search term to button array 
     $("#add-giph").on("click", function(event){
+        //prevents creation of empty button
+        if ($("#giph-input").val() === '') {
+            return false;
+        } else {
         event.preventDefault();
         var giph = $("#giph-input").val().trim()
         // console.log(giph);
         giphs.push(giph);
         renderButtons();
         displayGiphInfo();
+        $("#btn-" + (giphs.length - 1)).focus().click();
+        $("#giph-input").val('')
+        }
     });
 
     $("#buttons-view").on("click", ".giph-btn", displayGiphInfo);
@@ -136,11 +143,16 @@ $(function(){
     //https://stackoverflow.com/questions/699065/submitting-a-form-on-enter-with-jquery
     $("#giph-input").keypress(function (e){
         if (e.which == 13) {
-            jQuery(this).blur();
-            jQuery("#add-giph").focus().click();
-            // clicks on button for search term just entered
-            jQuery("#btn-" + (giphs.length - 1)).focus().click();
-        }
+            //prevents creation of empty button
+            if (jQuery(this).val() === '') {
+                return false;
+            } else {
+            $(this).blur();
+            $("#add-giph").focus().click();
+            
+            return false;  
+            }
+        } 
     });
     
     $("#control").on("click", "#play-all", function(){
