@@ -11,44 +11,38 @@ html, body {
 
 body {
     background-color: blue;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat Alternates', sans-serif; 
     justify-content: center;
-    color: whitesmoke;
     text-transform: uppercase;
-    /* overflow: hidden; */
 }
 
 header {
     background-color: rgb(7, 7, 233);
     border-bottom: 1px solid whitesmoke;
     display: flex;
-    flex-direction: row;
-    /* flex: 0 0 auto; */
+    flex-flow: row wrap;
     justify-content: center;
-    /* line-height: 2em; */
-    /* margin-bottom: 2.5em; */
 }
 
-.sticky{
+/* .sticky{
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
-}
+} */
 
 #navbar {
-    width: 80em;
+    width: 90%;
 }
 
 #title {
-    float: left;
-    display: flex;
     align-items: center;
+    display: flex;
+    float: left;
     justify-content: center;
-    /* line-height: 6em; */
-    
 }
 
 #title img {
@@ -70,10 +64,9 @@ header {
 
 #search-div {
     align-items: center;
-    /* align-self: center; */
     float: right;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 }
 
 #giph-input {
@@ -94,7 +87,7 @@ header {
     color: whitesmoke;
     font-size: 1.5em;
     font-weight: 600;
-    /* margin: 0 0.75em 0.75em 0; */
+    margin: 0.75em;
     padding: 0.5em;
     text-transform: uppercase;
     width: 11.1em;
@@ -106,36 +99,66 @@ header {
 }
 
 /* Main Content */
-#control{
-    /* align-self: flex-end; */
-    margin: 6.5em 0 0 0;
-    /* height: 5em; */
+.page {
+    align-self: center;
     display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 90%;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
     justify-content: flex-end;
-    width: 80em;
+    margin: 1em 0;
+}
+
+#control{
+    
+    display: flex;
+    /* float: right; */
+    justify-content: center;
+    margin: 0 1em;
+    width: 17em;
 }
 i {
     margin: 0 0.15em;
+    padding: 0.2em;
+    border: 1px solid blue; 
+    border-radius: 4px;
 }
 
 i:hover {
     cursor: pointer;
-    color: rgb(7, 7, 233);
+    border: 1px solid whitesmoke;
+    background-color: rgb(7, 7, 233);
+    
 }
+/* #play-all:hover {
+    color: rgb(5, 219, 5)
+}
+
+#stop-all:hover {
+    color: red
+} */
+
 .container {
     align-self: center;
     display: flex;
     flex-direction: row;
-    width: 80em;
-    margin-top: 1.5em;
+    width: 100%;
+    /* margin: 1.5em; */
 
     
 }
 
-aside {
+#buttons-view {
     display: flex;
     float: left;
     flex-direction: column;
+    align-content: center;
+    
 }
 
 .giph-btn {
@@ -145,7 +168,7 @@ aside {
     color: whitesmoke;
     font-size: 1.5em;
     font-weight: 600;
-    margin: 0 0 0.75em 0.75em;
+    margin: 0.25em 0.5em;
     padding: 0.5em;
     text-align: center;
     text-transform: uppercase;
@@ -164,9 +187,8 @@ aside {
 #giphs-view {
     display: flex;
     flex-flow: row wrap;
-    /* float: right; */
     justify-content: space-evenly;
-    width: 70em;
+    width: 85%;
 }
 
 #giphs-view p {
